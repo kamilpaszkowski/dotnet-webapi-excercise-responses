@@ -43,14 +43,11 @@ namespace Euvic.WebAPI.HttpResponses.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteTraining([FromRoute] int id) => [?];
 
-        [HttpDelete("{id}/attendee")]
-        public IActionResult DeleteAttendee([FromRoute] int id) => [?];
-
         // endpoint ma zwrócic odpowiedź że update się udał lecz nic nie zostaje zwrócone
         [HttpPut("{id}")]
         public IActionResult UpdateTraining([FromRoute] int id, [FromBody] UpdateTrainingRequest request) =>  [?];
 
-        // endpoint ma zwrócic odpowiedź że nie udało się zmienić "duration"
+        // endpoint ma zwrócic odpowiedź że duration ma nieprawidłową wartość i nie można przetworzyć requesta
         [Route("{id}/duration")]
         public IActionResult ChangeTrainingDuration([FromRoute] int id, [FromBody] int durationInMinutes) =>  [?];
     }
